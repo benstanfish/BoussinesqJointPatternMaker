@@ -120,7 +120,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::BoussinesqJointPatternMaker.Properties.Resources.ExportToExcel;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(38, 544);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(447, 302);
@@ -129,7 +129,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::BoussinesqJointPatternMaker.Properties.Resources.ChooseTablesDialog2;
+            this.pictureBox1.Image = global::BoussinesqJointPatternMaker.Properties.Resources.ChooseTablesDialog1;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(38, 95);
             this.pictureBox1.Name = "pictureBox1";

@@ -37,9 +37,6 @@ namespace BoussinesqJointPatternMaker
         static DataTable GetForces(DataTable PointLoads)
         {
 
-
-
-
             return null;
         }
 

@@ -68,11 +68,11 @@ namespace BoussinesqJointPatternMaker
                 }
                 else
                 {
-                    var oXL = new Excel.Application();
+                    Excel.Application oXL = new Excel.Application();
                     oXL.Visible = false;
                     oXL.DisplayAlerts = false;
-                    Workbook wk = oXL.Workbooks.Open(filePath);
-                    Worksheet ws = wk.Worksheets.get_Item(1) as Worksheet;
+                    Excel.Workbook wk = oXL.Workbooks.Open(filePath);
+                    Excel.Worksheet ws = wk.Worksheets.get_Item(1) as Worksheet;
 
                     // string rng = ws.UsedRange.Address.ToString();
 
@@ -100,6 +100,9 @@ namespace BoussinesqJointPatternMaker
 
                     wk.Close(false, null, null);
                     oXL.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oXL);
+                    GC.Collect();
+                    
 
                     return table;
                 }

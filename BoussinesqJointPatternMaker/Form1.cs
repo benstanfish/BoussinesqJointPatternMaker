@@ -16,6 +16,7 @@ namespace BoussinesqJointPatternMaker
     public partial class JointCoordinatesForm : Form
     {
         
+        public System.Data.DataTable JointDataTable { get; set; }
 
         public JointCoordinatesForm()
         {
@@ -137,6 +138,8 @@ namespace BoussinesqJointPatternMaker
 
             JointCoordinatesDataGridView.DataSource = table;
 
+            this.JointDataTable = table;
+            this.DialogResult = DialogResult.OK;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)

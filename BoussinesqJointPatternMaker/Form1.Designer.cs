@@ -30,14 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JointCoordinatesForm));
             this.JointCoordinatesDataGridView = new System.Windows.Forms.DataGridView();
-            this.ImportJointsButton = new System.Windows.Forms.Button();
             this.Joint = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Z = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CloseButton = new System.Windows.Forms.Button();
+            this.ImportJointsButton = new System.Windows.Forms.Button();
+            this.CancelBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ShowMeHowButton = new System.Windows.Forms.Button();
+            this.UseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.JointCoordinatesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,16 +58,6 @@
             this.JointCoordinatesDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.JointCoordinatesDataGridView.Size = new System.Drawing.Size(423, 508);
             this.JointCoordinatesDataGridView.TabIndex = 0;
-            // 
-            // ImportJointsButton
-            // 
-            this.ImportJointsButton.Location = new System.Drawing.Point(441, 26);
-            this.ImportJointsButton.Name = "ImportJointsButton";
-            this.ImportJointsButton.Size = new System.Drawing.Size(95, 26);
-            this.ImportJointsButton.TabIndex = 1;
-            this.ImportJointsButton.Text = "Import Joints";
-            this.ImportJointsButton.UseVisualStyleBackColor = true;
-            this.ImportJointsButton.Click += new System.EventHandler(this.ImportJointsButton_Click);
             // 
             // Joint
             // 
@@ -88,15 +79,25 @@
             this.Z.HeaderText = "Z";
             this.Z.Name = "Z";
             // 
-            // CloseButton
+            // ImportJointsButton
             // 
-            this.CloseButton.Location = new System.Drawing.Point(441, 508);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(95, 26);
-            this.CloseButton.TabIndex = 2;
-            this.CloseButton.Text = "Close";
-            this.CloseButton.UseVisualStyleBackColor = true;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.ImportJointsButton.Location = new System.Drawing.Point(441, 26);
+            this.ImportJointsButton.Name = "ImportJointsButton";
+            this.ImportJointsButton.Size = new System.Drawing.Size(95, 26);
+            this.ImportJointsButton.TabIndex = 1;
+            this.ImportJointsButton.Text = "Import Joints";
+            this.ImportJointsButton.UseVisualStyleBackColor = true;
+            this.ImportJointsButton.Click += new System.EventHandler(this.ImportJointsButton_Click);
+            // 
+            // CancelBtn
+            // 
+            this.CancelBtn.Location = new System.Drawing.Point(441, 508);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(95, 26);
+            this.CancelBtn.TabIndex = 2;
+            this.CancelBtn.Text = "Close";
+            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // label1
             // 
@@ -117,14 +118,24 @@
             this.ShowMeHowButton.UseVisualStyleBackColor = true;
             this.ShowMeHowButton.Click += new System.EventHandler(this.ShowMeHowButton_Click);
             // 
+            // UseButton
+            // 
+            this.UseButton.Location = new System.Drawing.Point(441, 476);
+            this.UseButton.Name = "UseButton";
+            this.UseButton.Size = new System.Drawing.Size(95, 26);
+            this.UseButton.TabIndex = 5;
+            this.UseButton.Text = "Use Data";
+            this.UseButton.UseVisualStyleBackColor = true;
+            // 
             // JointCoordinatesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 546);
+            this.Controls.Add(this.UseButton);
             this.Controls.Add(this.ShowMeHowButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.CloseButton);
+            this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.ImportJointsButton);
             this.Controls.Add(this.JointCoordinatesDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -146,9 +157,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
         private System.Windows.Forms.DataGridViewTextBoxColumn Z;
-        private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ShowMeHowButton;
+        private System.Windows.Forms.Button UseButton;
     }
 }
 

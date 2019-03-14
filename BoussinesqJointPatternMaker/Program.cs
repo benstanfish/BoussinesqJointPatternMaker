@@ -23,11 +23,11 @@ namespace BoussinesqJointPatternMaker
             /*
             JointCoordinatesForm jcf = new JointCoordinatesForm();
 
-            AddPointLoadsForm pLoads = new AddPointLoadsForm();
+            FormAddPointLoads pLoads = new FormAddPointLoads();
             DataTable ndt = new DataTable();
             ndt = pLoads.PointLoadsDataTable;
 
-            AddPointLoadsForm qLoads = new AddPointLoadsForm();
+            FormAddPointLoads qLoads = new FormAddPointLoads();
             qLoads.PointLoadsDataTable = ndt;
             qLoads.Refresh();
             */

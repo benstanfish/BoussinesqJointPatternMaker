@@ -87,6 +87,7 @@
             this.ButtonReviewPointLoads.TabIndex = 6;
             this.ButtonReviewPointLoads.Text = "Review";
             this.ButtonReviewPointLoads.UseVisualStyleBackColor = true;
+            this.ButtonReviewPointLoads.Click += new System.EventHandler(this.ButtonReviewPointLoads_Click);
             // 
             // CheckBoxPointsLoaded
             // 

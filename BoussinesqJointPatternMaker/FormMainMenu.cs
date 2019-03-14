@@ -13,7 +13,7 @@ namespace BoussinesqJointPatternMaker
     public partial class MainForm : Form
     {
         private DataTable JointsDataTable { get; set; }
-
+        private DataTable PointLoadDataTable { get; set; }
 
         public MainForm()
         {
@@ -32,7 +32,6 @@ namespace BoussinesqJointPatternMaker
             }
             else
             {
-                MessageBox.Show("Hello Professor Falken...");
             }
             
 
@@ -55,7 +54,23 @@ namespace BoussinesqJointPatternMaker
 
         private void ButtonPointLoads_Click(object sender, EventArgs e)
         {
-            
+            FormAddPointLoads points = new FormAddPointLoads();
+            if (points.ShowDialog() == DialogResult.OK)
+            {
+                this.PointLoadDataTable = points.PointLoadsDataTable; 
+                this.CheckBoxPointsLoaded.Checked = true;
+            }
+            else
+            {
+            }
+
+        }
+
+        private void ButtonReviewPointLoads_Click(object sender, EventArgs e)
+        {
+            FormAddPointLoads review = new FormAddPointLoads();
+            review.RefreshDataSource(PointLoadDataTable);
+            review.Show();
         }
     }
 }

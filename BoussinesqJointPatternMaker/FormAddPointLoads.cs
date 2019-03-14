@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace BoussinesqJointPatternMaker
 {
-    public partial class AddPointLoadsForm : Form
+    public partial class FormAddPointLoads : Form
     {
         public DataTable PointLoadsDataTable { get; set; }
+        public void RefreshDataSource(System.Data.DataTable table)
+        {
+            this.PointLoadsDataGridView.Columns[0].DataPropertyName = table.Columns[0].ColumnName;
+            this.PointLoadsDataGridView.Columns[1].DataPropertyName = table.Columns[1].ColumnName;
+            this.PointLoadsDataGridView.Columns[2].DataPropertyName = table.Columns[2].ColumnName;
+            this.PointLoadsDataGridView.Columns[3].DataPropertyName = table.Columns[3].ColumnName;
+            this.PointLoadsDataGridView.Columns[4].DataPropertyName = table.Columns[4].ColumnName;
 
-        public AddPointLoadsForm()
+            this.PointLoadsDataGridView.DataSource = table;
+        }
+
+        public FormAddPointLoads()
         {
             InitializeComponent();
         }
@@ -26,7 +36,19 @@ namespace BoussinesqJointPatternMaker
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {
-            this.PointLoadsDataTable = (DataTable)PointLoadsDataGridView.DataSource;
+            DataTable table = new DataTable();
+            try
+            {
+                table = (DataTable)PointLoadsDataGridView.DataSource;
+                this.PointLoadsDataTable = table;
+                this.Refresh();
+                this.DialogResult = DialogResult.OK;
+            }
+            catch
+            {
+
+            }
         }
+
     }
 }

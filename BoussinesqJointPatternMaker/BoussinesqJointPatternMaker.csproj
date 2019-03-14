@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormLoadCases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoadCases.Designer.cs">
+      <DependentUpon>FormLoadCases.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormJoints.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormLoadCases.resx">
+      <DependentUpon>FormLoadCases.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormJoints.resx">
       <DependentUpon>FormJoints.cs</DependentUpon>
     </EmbeddedResource>

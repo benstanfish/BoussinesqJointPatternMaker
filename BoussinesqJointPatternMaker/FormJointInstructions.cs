@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BoussinesqJointPatternMaker
 {
-    public partial class Form2 : Form
+    public partial class FormJointInstructions : Form
     {
-        public Form2()
+        public FormJointInstructions()
         {
             InitializeComponent();
         }

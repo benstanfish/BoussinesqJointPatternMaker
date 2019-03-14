@@ -17,6 +17,22 @@ namespace BoussinesqJointPatternMaker
     {
         
         public System.Data.DataTable JointDataTable { get; set; }
+        public void DisableButtons()
+        {
+            this.ButtonImportJoints.Enabled = false;
+            this.ButtonInstructions.Enabled = false;
+            this.ButtonApply.Enabled = false;
+        }
+        public void RefreshDataSource(System.Data.DataTable table)
+        {
+
+            JointCoordinatesDataGridView.Columns[0].DataPropertyName = table.Columns[0].ColumnName;
+            JointCoordinatesDataGridView.Columns[1].DataPropertyName = table.Columns[1].ColumnName;
+            JointCoordinatesDataGridView.Columns[2].DataPropertyName = table.Columns[2].ColumnName;
+            JointCoordinatesDataGridView.Columns[3].DataPropertyName = table.Columns[3].ColumnName;
+
+            this.JointCoordinatesDataGridView.DataSource = table;
+        }
 
         public JointCoordinatesForm()
         {
@@ -119,7 +135,6 @@ namespace BoussinesqJointPatternMaker
                     usedRange.Cells[i + 1, 7].value
                     );
             }
-
             return table;
         }
 
@@ -139,7 +154,6 @@ namespace BoussinesqJointPatternMaker
             JointCoordinatesDataGridView.DataSource = table;
 
             this.JointDataTable = table;
-            this.DialogResult = DialogResult.OK;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -149,8 +163,13 @@ namespace BoussinesqJointPatternMaker
 
         private void ShowMeHowButton_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            FormJointInstructions form2 = new FormJointInstructions();
             form2.Show();
+        }
+
+        private void UseButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

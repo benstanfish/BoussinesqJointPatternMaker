@@ -18,7 +18,7 @@ namespace BoussinesqJointPatternMaker
         public MainForm()
         {
             InitializeComponent();
-            this.JointsCheckBox.Checked = false;
+            this.CheckBoxJointsLoaded.Checked = false;
         }
 
         private void LoadJoints_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace BoussinesqJointPatternMaker
             if (joints.ShowDialog() == DialogResult.OK)
             {
                 this.JointsDataTable = joints.JointDataTable;
-                this.JointsCheckBox.Checked = true;
+                this.CheckBoxJointsLoaded.Checked = true;
             }
             else
             {
@@ -47,10 +47,15 @@ namespace BoussinesqJointPatternMaker
         private void ReviewJointsButton_Click(object sender, EventArgs e)
         {
             JointCoordinatesForm review = new JointCoordinatesForm();
-            review.JointDataTable = JointsDataTable;
-            
+            review.DisableButtons();
+            review.RefreshDataSource(JointsDataTable);
             review.Show();
 
+        }
+
+        private void ButtonPointLoads_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

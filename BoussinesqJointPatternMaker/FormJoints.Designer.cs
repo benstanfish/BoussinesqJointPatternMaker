@@ -34,11 +34,10 @@
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Z = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImportJointsButton = new System.Windows.Forms.Button();
-            this.CancelBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ShowMeHowButton = new System.Windows.Forms.Button();
-            this.UseButton = new System.Windows.Forms.Button();
+            this.ButtonImportJoints = new System.Windows.Forms.Button();
+            this.ButtonCancel = new System.Windows.Forms.Button();
+            this.ButtonInstructions = new System.Windows.Forms.Button();
+            this.ButtonApply = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.JointCoordinatesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +52,7 @@
             this.Y,
             this.Z});
             this.JointCoordinatesDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.JointCoordinatesDataGridView.Location = new System.Drawing.Point(12, 26);
+            this.JointCoordinatesDataGridView.Location = new System.Drawing.Point(12, 12);
             this.JointCoordinatesDataGridView.Name = "JointCoordinatesDataGridView";
             this.JointCoordinatesDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.JointCoordinatesDataGridView.Size = new System.Drawing.Size(423, 508);
@@ -79,64 +78,55 @@
             this.Z.HeaderText = "Z";
             this.Z.Name = "Z";
             // 
-            // ImportJointsButton
+            // ButtonImportJoints
             // 
-            this.ImportJointsButton.Location = new System.Drawing.Point(441, 26);
-            this.ImportJointsButton.Name = "ImportJointsButton";
-            this.ImportJointsButton.Size = new System.Drawing.Size(95, 26);
-            this.ImportJointsButton.TabIndex = 1;
-            this.ImportJointsButton.Text = "Import Joints";
-            this.ImportJointsButton.UseVisualStyleBackColor = true;
-            this.ImportJointsButton.Click += new System.EventHandler(this.ImportJointsButton_Click);
+            this.ButtonImportJoints.Location = new System.Drawing.Point(441, 12);
+            this.ButtonImportJoints.Name = "ButtonImportJoints";
+            this.ButtonImportJoints.Size = new System.Drawing.Size(95, 26);
+            this.ButtonImportJoints.TabIndex = 1;
+            this.ButtonImportJoints.Text = "Import Joints";
+            this.ButtonImportJoints.UseVisualStyleBackColor = true;
+            this.ButtonImportJoints.Click += new System.EventHandler(this.ImportJointsButton_Click);
             // 
-            // CancelBtn
+            // ButtonCancel
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(441, 508);
-            this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(95, 26);
-            this.CancelBtn.TabIndex = 2;
-            this.CancelBtn.Text = "Close";
-            this.CancelBtn.UseVisualStyleBackColor = true;
-            this.CancelBtn.Click += new System.EventHandler(this.CloseButton_Click);
+            this.ButtonCancel.Location = new System.Drawing.Point(441, 494);
+            this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.Size = new System.Drawing.Size(95, 26);
+            this.ButtonCancel.TabIndex = 2;
+            this.ButtonCancel.Text = "Cancel";
+            this.ButtonCancel.UseVisualStyleBackColor = true;
+            this.ButtonCancel.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // label1
+            // ButtonInstructions
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Import Joint Coordinates from SAP or SAFE";
+            this.ButtonInstructions.Location = new System.Drawing.Point(441, 44);
+            this.ButtonInstructions.Name = "ButtonInstructions";
+            this.ButtonInstructions.Size = new System.Drawing.Size(95, 25);
+            this.ButtonInstructions.TabIndex = 4;
+            this.ButtonInstructions.Text = "Instructions";
+            this.ButtonInstructions.UseVisualStyleBackColor = true;
+            this.ButtonInstructions.Click += new System.EventHandler(this.ShowMeHowButton_Click);
             // 
-            // ShowMeHowButton
+            // ButtonApply
             // 
-            this.ShowMeHowButton.Location = new System.Drawing.Point(441, 58);
-            this.ShowMeHowButton.Name = "ShowMeHowButton";
-            this.ShowMeHowButton.Size = new System.Drawing.Size(95, 25);
-            this.ShowMeHowButton.TabIndex = 4;
-            this.ShowMeHowButton.Text = "How?";
-            this.ShowMeHowButton.UseVisualStyleBackColor = true;
-            this.ShowMeHowButton.Click += new System.EventHandler(this.ShowMeHowButton_Click);
-            // 
-            // UseButton
-            // 
-            this.UseButton.Location = new System.Drawing.Point(441, 476);
-            this.UseButton.Name = "UseButton";
-            this.UseButton.Size = new System.Drawing.Size(95, 26);
-            this.UseButton.TabIndex = 5;
-            this.UseButton.Text = "Use Data";
-            this.UseButton.UseVisualStyleBackColor = true;
+            this.ButtonApply.Location = new System.Drawing.Point(441, 462);
+            this.ButtonApply.Name = "ButtonApply";
+            this.ButtonApply.Size = new System.Drawing.Size(95, 26);
+            this.ButtonApply.TabIndex = 5;
+            this.ButtonApply.Text = "Apply";
+            this.ButtonApply.UseVisualStyleBackColor = true;
+            this.ButtonApply.Click += new System.EventHandler(this.UseButton_Click);
             // 
             // JointCoordinatesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 546);
-            this.Controls.Add(this.UseButton);
-            this.Controls.Add(this.ShowMeHowButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.CancelBtn);
-            this.Controls.Add(this.ImportJointsButton);
+            this.ClientSize = new System.Drawing.Size(542, 530);
+            this.Controls.Add(this.ButtonApply);
+            this.Controls.Add(this.ButtonInstructions);
+            this.Controls.Add(this.ButtonCancel);
+            this.Controls.Add(this.ButtonImportJoints);
             this.Controls.Add(this.JointCoordinatesDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -145,22 +135,20 @@
             this.Text = "Joint Coordinates";
             ((System.ComponentModel.ISupportInitialize)(this.JointCoordinatesDataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView JointCoordinatesDataGridView;
-        private System.Windows.Forms.Button ImportJointsButton;
+        private System.Windows.Forms.Button ButtonImportJoints;
         private System.Windows.Forms.DataGridViewTextBoxColumn Joint;
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
         private System.Windows.Forms.DataGridViewTextBoxColumn Z;
-        private System.Windows.Forms.Button CancelBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button ShowMeHowButton;
-        private System.Windows.Forms.Button UseButton;
+        private System.Windows.Forms.Button ButtonCancel;
+        private System.Windows.Forms.Button ButtonInstructions;
+        private System.Windows.Forms.Button ButtonApply;
     }
 }
 

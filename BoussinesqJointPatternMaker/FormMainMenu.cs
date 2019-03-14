@@ -58,7 +58,7 @@ namespace BoussinesqJointPatternMaker
             if (points.ShowDialog() == DialogResult.OK)
             {
    
-                this.PointsDataTable = points.PointLoadsDataTable;
+                this.PointsDataTable = points.pDataTable;
                 this.CheckBoxPointsLoaded.Checked = true;
  
             }
@@ -71,7 +71,7 @@ namespace BoussinesqJointPatternMaker
         private void ButtonReviewPointLoads_Click(object sender, EventArgs e)
         {
             FormAddPointLoads review = new FormAddPointLoads();
-            review.RefreshDataSource(PointsDataTable);
+            review.RefreshDataSource();
             review.Show();
         }
     }

@@ -12,8 +12,9 @@ namespace BoussinesqJointPatternMaker
 {
     public partial class FormAddPointLoads : Form
     {
-        public DataTable PointLoadsDataTable { get; set; }
-        public void RefreshDataSource(DataTable table)
+        public System.Data.DataTable pDataTable { get; set; }
+
+        public void RefreshDataSource()
         {
             /*
             PointLoadsDataGridView.Columns[0].DataPropertyName = table.Columns[0].ColumnName;
@@ -23,7 +24,7 @@ namespace BoussinesqJointPatternMaker
             PointLoadsDataGridView.Columns[4].DataPropertyName = table.Columns[4].ColumnName;
             */
 
-            this.PointLoadsDataGridView.DataSource = table;
+            this.PointLoadsDataGridView.DataSource = pDataTable;
         }
 
         public FormAddPointLoads()
@@ -58,8 +59,8 @@ namespace BoussinesqJointPatternMaker
             }
             */
 
-            PointLoadsDataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            PointLoadsDataTable = (DataTable)PointLoadsDataGridView.DataSource;
+
+
             this.Close();
         }
 

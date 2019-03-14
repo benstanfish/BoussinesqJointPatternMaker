@@ -38,6 +38,19 @@ namespace BoussinesqJointPatternMaker
 
         }
 
+        private void ImportantNotesButton_Click(object sender, EventArgs e)
+        {
+            NotesForm nf = new NotesForm();
+            nf.Show();
+        }
 
+        private void ReviewJointsButton_Click(object sender, EventArgs e)
+        {
+            JointCoordinatesForm review = new JointCoordinatesForm();
+            review.JointDataTable = JointsDataTable;
+            
+            review.Show();
+
+        }
     }
 }

@@ -58,6 +58,7 @@
             this.PointLoadsDataGridView.Name = "PointLoadsDataGridView";
             this.PointLoadsDataGridView.Size = new System.Drawing.Size(520, 319);
             this.PointLoadsDataGridView.TabIndex = 0;
+            this.PointLoadsDataGridView.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.PointLoadsDataGridView_CellStateChanged);
             // 
             // PointID
             // 

@@ -13,7 +13,7 @@ namespace BoussinesqJointPatternMaker
     public partial class MainForm : Form
     {
         private DataTable JointsDataTable { get; set; }
-        private DataTable PLDataTable { get; set; }
+        private DataTable PointsDataTable { get; set; }
 
         public MainForm()
         {
@@ -57,8 +57,10 @@ namespace BoussinesqJointPatternMaker
             FormAddPointLoads points = new FormAddPointLoads();
             if (points.ShowDialog() == DialogResult.OK)
             {
-                this.PLDataTable = points.PointLoadsDataTable; 
+   
+                this.PointsDataTable = points.PointLoadsDataTable;
                 this.CheckBoxPointsLoaded.Checked = true;
+ 
             }
             else
             {
@@ -69,7 +71,7 @@ namespace BoussinesqJointPatternMaker
         private void ButtonReviewPointLoads_Click(object sender, EventArgs e)
         {
             FormAddPointLoads review = new FormAddPointLoads();
-            review.RefreshDataSource(PLDataTable);
+            review.RefreshDataSource(PointsDataTable);
             review.Show();
         }
     }

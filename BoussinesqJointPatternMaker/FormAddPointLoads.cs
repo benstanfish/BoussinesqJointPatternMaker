@@ -36,18 +36,7 @@ namespace BoussinesqJointPatternMaker
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
-            try
-            {
-                table = (DataTable)PointLoadsDataGridView.DataSource;
-                this.PointLoadsDataTable = table;
-                this.Refresh();
-                this.DialogResult = DialogResult.OK;
-            }
-            catch
-            {
 
-            }
         }
 
     }

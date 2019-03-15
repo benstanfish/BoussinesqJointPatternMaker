@@ -16,15 +16,14 @@ namespace BoussinesqJointPatternMaker
 
         public void RefreshDataSource()
         {
-            /*
-            PointLoadsDataGridView.Columns[0].DataPropertyName = table.Columns[0].ColumnName;
-            PointLoadsDataGridView.Columns[1].DataPropertyName = table.Columns[1].ColumnName;
-            PointLoadsDataGridView.Columns[2].DataPropertyName = table.Columns[2].ColumnName;
-            PointLoadsDataGridView.Columns[3].DataPropertyName = table.Columns[3].ColumnName;
-            PointLoadsDataGridView.Columns[4].DataPropertyName = table.Columns[4].ColumnName;
-            */
 
-            this.PointLoadsDataGridView.DataSource = pDataTable;
+            dgvPointLoads.Columns[0].DataPropertyName = pDataTable.Columns[0].ColumnName;
+            dgvPointLoads.Columns[1].DataPropertyName = pDataTable.Columns[1].ColumnName;
+            dgvPointLoads.Columns[2].DataPropertyName = pDataTable.Columns[2].ColumnName;
+            dgvPointLoads.Columns[3].DataPropertyName = pDataTable.Columns[3].ColumnName;
+            dgvPointLoads.Columns[4].DataPropertyName = pDataTable.Columns[4].ColumnName;
+
+            dgvPointLoads.DataSource = this.pDataTable;
         }
 
         public FormAddPointLoads()
@@ -40,41 +39,33 @@ namespace BoussinesqJointPatternMaker
         private void ApplyButton_Click(object sender, EventArgs e)
         {
 
-            /*
             DataTable table = new DataTable();
+            table.Columns.Add("PointID");
+            table.Columns.Add("X");
+            table.Columns.Add("Y");
+            table.Columns.Add("Z");
+            table.Columns.Add("Magnitude");
 
             
-            for (int i = 0; i < PointLoadsDataGridView.ColumnCount; i++)
+            foreach (DataGridViewRow dgvr in dgvPointLoads.Rows)
             {
-                table.Columns.Add();
-            }
-            foreach(DataGridViewRow row in PointLoadsDataGridView.Rows)
-            {
-                DataRow dr = table.NewRow();
-                for(int j = 0; j < table.Columns.Count; j++)
+                if (!dgvr.IsNewRow)
                 {
-                    dr[j] = row.Cells[j];
+                    DataRow dr = table.NewRow();
+                    dr["PointID"] = dgvr.Cells["PointID"].Value;
+                    dr["X"] = dgvr.Cells["X"].Value;
+                    dr["Y"] = dgvr.Cells["Y"].Value;
+                    dr["Z"] = dgvr.Cells["Z"].Value;
+                    dr["Magnitude"] = dgvr.Cells["Magnitude"].Value;
+                    table.Rows.Add(dr);
                 }
-                table.Rows.Add(dr);
+                
             }
-            */
 
-
-
+            pDataTable = table;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
-        //void PointLoadsDataGridView_CurrentCellDirtyStateChanged(object sender, EventArgs e)
-        //{
-        //    if (PointLoadsDataGridView.IsCurrentCellDirty)
-        //    {
-        //        PointLoadsDataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
-        //    }
-        //}
-
-        private void PointLoadsDataGridView_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
-        {
-            PointLoadsDataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
-        }
     }
 }

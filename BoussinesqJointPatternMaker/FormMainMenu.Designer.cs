@@ -36,6 +36,7 @@
             this.ButtonReviewPointLoads = new System.Windows.Forms.Button();
             this.CheckBoxPointsLoaded = new System.Windows.Forms.CheckBox();
             this.ButtonPointLoads = new System.Windows.Forms.Button();
+            this.ButtonClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonLoadJoints
@@ -110,11 +111,22 @@
             this.ButtonPointLoads.UseVisualStyleBackColor = true;
             this.ButtonPointLoads.Click += new System.EventHandler(this.ButtonPointLoads_Click);
             // 
+            // ButtonClose
+            // 
+            this.ButtonClose.Location = new System.Drawing.Point(206, 410);
+            this.ButtonClose.Name = "ButtonClose";
+            this.ButtonClose.Size = new System.Drawing.Size(90, 28);
+            this.ButtonClose.TabIndex = 7;
+            this.ButtonClose.Text = "Close";
+            this.ButtonClose.UseVisualStyleBackColor = true;
+            this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(303, 450);
+            this.Controls.Add(this.ButtonClose);
             this.Controls.Add(this.ButtonReviewPointLoads);
             this.Controls.Add(this.CheckBoxPointsLoaded);
             this.Controls.Add(this.ButtonPointLoads);
@@ -140,5 +152,6 @@
         private System.Windows.Forms.Button ButtonReviewPointLoads;
         private System.Windows.Forms.CheckBox CheckBoxPointsLoaded;
         private System.Windows.Forms.Button ButtonPointLoads;
+        private System.Windows.Forms.Button ButtonClose;
     }
 }

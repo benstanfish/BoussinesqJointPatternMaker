@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddPointLoads));
-            this.PointLoadsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dgvPointLoads = new System.Windows.Forms.DataGridView();
             this.PointID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,24 +41,23 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PointLoadsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPointLoads)).BeginInit();
             this.SuspendLayout();
             // 
-            // PointLoadsDataGridView
+            // dgvPointLoads
             // 
-            this.PointLoadsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.PointLoadsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PointLoadsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPointLoads.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPointLoads.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPointLoads.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PointID,
             this.X,
             this.Y,
             this.Z,
             this.Magnitude});
-            this.PointLoadsDataGridView.Location = new System.Drawing.Point(12, 108);
-            this.PointLoadsDataGridView.Name = "PointLoadsDataGridView";
-            this.PointLoadsDataGridView.Size = new System.Drawing.Size(520, 319);
-            this.PointLoadsDataGridView.TabIndex = 0;
-            this.PointLoadsDataGridView.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.PointLoadsDataGridView_CellStateChanged);
+            this.dgvPointLoads.Location = new System.Drawing.Point(12, 108);
+            this.dgvPointLoads.Name = "dgvPointLoads";
+            this.dgvPointLoads.Size = new System.Drawing.Size(520, 319);
+            this.dgvPointLoads.TabIndex = 0;
             // 
             // PointID
             // 
@@ -165,12 +164,12 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ApplyButton);
             this.Controls.Add(this.CancelBtn);
-            this.Controls.Add(this.PointLoadsDataGridView);
+            this.Controls.Add(this.dgvPointLoads);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddPointLoads";
             this.Text = "Add New Point Loads";
-            ((System.ComponentModel.ISupportInitialize)(this.PointLoadsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPointLoads)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,7 +177,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView PointLoadsDataGridView;
+        private System.Windows.Forms.DataGridView dgvPointLoads;
         private System.Windows.Forms.DataGridViewTextBoxColumn PointID;
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;

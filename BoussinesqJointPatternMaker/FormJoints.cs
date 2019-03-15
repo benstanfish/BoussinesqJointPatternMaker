@@ -58,6 +58,7 @@ namespace BoussinesqJointPatternMaker
             }
         }
 
+        /* NOT CURRENTLY USED
         public System.Data.DataTable ReturnJointCoordinateFromExcel(string filePath)
         {
             try
@@ -98,10 +99,12 @@ namespace BoussinesqJointPatternMaker
                             range.Cells[i, 7].value);
                     }
 
-                    wk.Close(false, null, null);
-                    oXL.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wk);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(oXL);
-                    GC.Collect();
+                    wk.Close(false, null, null);
+                    wk = null;
+                    oXL.Quit();
+                    oXL = null;
                     
 
                     return table;
@@ -112,7 +115,8 @@ namespace BoussinesqJointPatternMaker
                 return null;
             }
         }
-
+        */
+        
         private System.Data.DataTable GetExcelTable(string path)
         {
             var oXL = new Excel.Application();
@@ -124,7 +128,7 @@ namespace BoussinesqJointPatternMaker
             // Range copyRange = ws.Range["A3", usedRange.Cells[usedRange.Rows.Count,usedRange.Columns.Count]];
 
             System.Data.DataTable table = new System.Data.DataTable();
-            table.Columns.Add("Joint ID");
+            table.Columns.Add("JointID");
             table.Columns.Add("X");
             table.Columns.Add("Y");
             table.Columns.Add("Z");
@@ -138,9 +142,15 @@ namespace BoussinesqJointPatternMaker
                     usedRange.Cells[i + 1, 7].value
                     );
             }
+            
+            wk.Close(false, null, null);
+            oXL.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(wk);
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(oXL);
+
             return table;
         }
-
+        
 
 
         private void ImportJointsButton_Click(object sender, EventArgs e)

@@ -36,7 +36,8 @@
             this.ButtonReviewPointLoads = new System.Windows.Forms.Button();
             this.CheckBoxPointsLoaded = new System.Windows.Forms.CheckBox();
             this.ButtonPointLoads = new System.Windows.Forms.Button();
-            this.ButtonClose = new System.Windows.Forms.Button();
+            this.ButtonQuit = new System.Windows.Forms.Button();
+            this.ButtonVersion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonLoadJoints
@@ -57,6 +58,7 @@
             this.CheckBoxJointsLoaded.Name = "CheckBoxJointsLoaded";
             this.CheckBoxJointsLoaded.Size = new System.Drawing.Size(62, 17);
             this.CheckBoxJointsLoaded.TabIndex = 1;
+            this.CheckBoxJointsLoaded.TabStop = false;
             this.CheckBoxJointsLoaded.Text = "Loaded";
             this.CheckBoxJointsLoaded.UseVisualStyleBackColor = true;
             // 
@@ -98,6 +100,7 @@
             this.CheckBoxPointsLoaded.Name = "CheckBoxPointsLoaded";
             this.CheckBoxPointsLoaded.Size = new System.Drawing.Size(62, 17);
             this.CheckBoxPointsLoaded.TabIndex = 5;
+            this.CheckBoxPointsLoaded.TabStop = false;
             this.CheckBoxPointsLoaded.Text = "Loaded";
             this.CheckBoxPointsLoaded.UseVisualStyleBackColor = true;
             // 
@@ -111,22 +114,33 @@
             this.ButtonPointLoads.UseVisualStyleBackColor = true;
             this.ButtonPointLoads.Click += new System.EventHandler(this.ButtonPointLoads_Click);
             // 
-            // ButtonClose
+            // ButtonQuit
             // 
-            this.ButtonClose.Location = new System.Drawing.Point(206, 410);
-            this.ButtonClose.Name = "ButtonClose";
-            this.ButtonClose.Size = new System.Drawing.Size(90, 28);
-            this.ButtonClose.TabIndex = 7;
-            this.ButtonClose.Text = "Close";
-            this.ButtonClose.UseVisualStyleBackColor = true;
-            this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            this.ButtonQuit.Location = new System.Drawing.Point(206, 219);
+            this.ButtonQuit.Name = "ButtonQuit";
+            this.ButtonQuit.Size = new System.Drawing.Size(90, 28);
+            this.ButtonQuit.TabIndex = 7;
+            this.ButtonQuit.Text = "Quit";
+            this.ButtonQuit.UseVisualStyleBackColor = true;
+            this.ButtonQuit.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
+            // ButtonVersion
+            // 
+            this.ButtonVersion.Location = new System.Drawing.Point(206, 12);
+            this.ButtonVersion.Name = "ButtonVersion";
+            this.ButtonVersion.Size = new System.Drawing.Size(90, 28);
+            this.ButtonVersion.TabIndex = 8;
+            this.ButtonVersion.Text = "About";
+            this.ButtonVersion.UseVisualStyleBackColor = true;
+            this.ButtonVersion.Click += new System.EventHandler(this.ButtonVersion_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 450);
-            this.Controls.Add(this.ButtonClose);
+            this.ClientSize = new System.Drawing.Size(303, 255);
+            this.Controls.Add(this.ButtonVersion);
+            this.Controls.Add(this.ButtonQuit);
             this.Controls.Add(this.ButtonReviewPointLoads);
             this.Controls.Add(this.CheckBoxPointsLoaded);
             this.Controls.Add(this.ButtonPointLoads);
@@ -152,6 +166,7 @@
         private System.Windows.Forms.Button ButtonReviewPointLoads;
         private System.Windows.Forms.CheckBox CheckBoxPointsLoaded;
         private System.Windows.Forms.Button ButtonPointLoads;
-        private System.Windows.Forms.Button ButtonClose;
+        private System.Windows.Forms.Button ButtonQuit;
+        private System.Windows.Forms.Button ButtonVersion;
     }
 }

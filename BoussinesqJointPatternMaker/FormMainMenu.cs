@@ -19,6 +19,7 @@ namespace BoussinesqJointPatternMaker
         {
             InitializeComponent();
             this.CheckBoxJointsLoaded.Checked = false;
+            this.CheckBoxPointsLoaded.Checked = false;
         }
 
         private void LoadJoints_Click(object sender, EventArgs e)
@@ -29,12 +30,12 @@ namespace BoussinesqJointPatternMaker
             {
                 this.JointsDataTable = joints.JointDataTable;
                 this.CheckBoxJointsLoaded.Checked = true;
+                
             }
             else
             {
             }
             
-
         }
 
         private void ImportantNotesButton_Click(object sender, EventArgs e)
@@ -77,6 +78,12 @@ namespace BoussinesqJointPatternMaker
         private void ButtonClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ButtonVersion_Click(object sender, EventArgs e)
+        {
+            FormAbout about = new FormAbout();
+            about.Show();
         }
     }
 }

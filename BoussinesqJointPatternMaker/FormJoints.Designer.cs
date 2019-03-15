@@ -35,9 +35,9 @@
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Z = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonImportJoints = new System.Windows.Forms.Button();
-            this.ButtonCancel = new System.Windows.Forms.Button();
             this.ButtonInstructions = new System.Windows.Forms.Button();
             this.ButtonApply = new System.Windows.Forms.Button();
+            this.ButtonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.JointCoordinatesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,16 +88,6 @@
             this.ButtonImportJoints.UseVisualStyleBackColor = true;
             this.ButtonImportJoints.Click += new System.EventHandler(this.ImportJointsButton_Click);
             // 
-            // ButtonCancel
-            // 
-            this.ButtonCancel.Location = new System.Drawing.Point(441, 494);
-            this.ButtonCancel.Name = "ButtonCancel";
-            this.ButtonCancel.Size = new System.Drawing.Size(95, 26);
-            this.ButtonCancel.TabIndex = 2;
-            this.ButtonCancel.Text = "Cancel";
-            this.ButtonCancel.UseVisualStyleBackColor = true;
-            this.ButtonCancel.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
             // ButtonInstructions
             // 
             this.ButtonInstructions.Location = new System.Drawing.Point(441, 44);
@@ -118,14 +108,24 @@
             this.ButtonApply.UseVisualStyleBackColor = true;
             this.ButtonApply.Click += new System.EventHandler(this.UseButton_Click);
             // 
+            // ButtonClose
+            // 
+            this.ButtonClose.Location = new System.Drawing.Point(441, 494);
+            this.ButtonClose.Name = "ButtonClose";
+            this.ButtonClose.Size = new System.Drawing.Size(95, 26);
+            this.ButtonClose.TabIndex = 6;
+            this.ButtonClose.Text = "Close";
+            this.ButtonClose.UseVisualStyleBackColor = true;
+            this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
             // JointCoordinatesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 530);
+            this.Controls.Add(this.ButtonClose);
             this.Controls.Add(this.ButtonApply);
             this.Controls.Add(this.ButtonInstructions);
-            this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonImportJoints);
             this.Controls.Add(this.JointCoordinatesDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -146,9 +146,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
         private System.Windows.Forms.DataGridViewTextBoxColumn Z;
-        private System.Windows.Forms.Button ButtonCancel;
         private System.Windows.Forms.Button ButtonInstructions;
         private System.Windows.Forms.Button ButtonApply;
+        private System.Windows.Forms.Button ButtonClose;
     }
 }
 

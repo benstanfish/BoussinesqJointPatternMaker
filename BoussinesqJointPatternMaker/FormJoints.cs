@@ -57,65 +57,6 @@ namespace BoussinesqJointPatternMaker
                 return "";
             }
         }
-
-        /* NOT CURRENTLY USED
-        public System.Data.DataTable ReturnJointCoordinateFromExcel(string filePath)
-        {
-            try
-            {
-                if (filePath == string.Empty)
-                {
-                    return null;
-                }
-                else
-                {
-                    Excel.Application oXL = new Excel.Application();
-                    oXL.Visible = false;
-                    oXL.DisplayAlerts = false;
-                    Excel.Workbook wk = oXL.Workbooks.Open(filePath);
-                    Excel.Worksheet ws = wk.Worksheets.get_Item(1) as Worksheet;
-
-                    // string rng = ws.UsedRange.Address.ToString();
-
-                    Range last = ws.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
-                    Range range = ws.get_Range("A3", last);
-
-                    int lastUsedRow = last.Row;
-                    int lastUsedColumn = last.Column;
-                    int totalUsedRows = last.Row - 2;
-
-                    System.Data.DataTable table = new System.Data.DataTable();
-                    table.Columns.Add("JointID", typeof(string));
-                    table.Columns.Add("X", typeof(double));
-                    table.Columns.Add("Y", typeof(double));
-                    table.Columns.Add("Z", typeof(double));
-
-                    for (int i = 1; i < totalUsedRows; i++)
-                    {
-                        table.Rows.Add(
-                            range.Cells[i, 1].value,
-                            range.Cells[i, 4].value,
-                            range.Cells[i, 5].value,
-                            range.Cells[i, 7].value);
-                    }
-
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wk);
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oXL);
-                    wk.Close(false, null, null);
-                    wk = null;
-                    oXL.Quit();
-                    oXL = null;
-                    
-
-                    return table;
-                }
-            }
-            catch
-            {
-                return null;
-            }
-        }
-        */
         
         private System.Data.DataTable GetExcelTable(string path)
         {
@@ -125,7 +66,6 @@ namespace BoussinesqJointPatternMaker
             Workbook wk = oXL.Workbooks.Open(path);
             Worksheet ws = wk.Worksheets.get_Item(1) as Worksheet;
             Range usedRange = ws.UsedRange;
-            // Range copyRange = ws.Range["A3", usedRange.Cells[usedRange.Rows.Count,usedRange.Columns.Count]];
 
             System.Data.DataTable table = new System.Data.DataTable();
             table.Columns.Add("JointID");
@@ -151,8 +91,6 @@ namespace BoussinesqJointPatternMaker
             return table;
         }
         
-
-
         private void ImportJointsButton_Click(object sender, EventArgs e)
         {
 
@@ -169,10 +107,6 @@ namespace BoussinesqJointPatternMaker
             this.JointDataTable = table;
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void ShowMeHowButton_Click(object sender, EventArgs e)
         {
@@ -183,6 +117,11 @@ namespace BoussinesqJointPatternMaker
         private void UseButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

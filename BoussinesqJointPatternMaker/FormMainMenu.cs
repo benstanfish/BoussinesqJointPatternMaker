@@ -14,9 +14,7 @@ namespace BoussinesqJointPatternMaker
     {
         private DataTable JointsDataTable { get; set; }
         private DataTable LoadCasesDataTable { get; set; }
-        private List<string> LoadCaseList { get; set; }
         private DataTable PointsDataTable { get; set; }
-
 
         public MainForm()
         {
@@ -58,9 +56,11 @@ namespace BoussinesqJointPatternMaker
         private void ButtonPointLoads_Click(object sender, EventArgs e)
         {
             FormAddPointLoads points = new FormAddPointLoads();
+            points.pLoadCaseTable = LoadCasesDataTable;
             if (points.ShowDialog() == DialogResult.OK)
             {
                 this.PointsDataTable = points.pDataTable;
+                
                 this.CheckBoxPointsLoaded.Checked = true;
             }
             else
@@ -73,6 +73,7 @@ namespace BoussinesqJointPatternMaker
         {
             FormAddPointLoads review = new FormAddPointLoads();
             review.pDataTable = PointsDataTable;
+
             review.RefreshDataSource();
             review.Show();
         }
@@ -113,13 +114,6 @@ namespace BoussinesqJointPatternMaker
             {
                 this.LoadCasesDataTable = loadCases.pLoadCases;
                 this.CheckBoxLoadCases.Checked = true;
-
-                List<string> comboList = new List<string>();
-                foreach(DataRow row in LoadCasesDataTable.Rows)
-                {
-                    comboList.Add(row.ToString());
-                }
-                LoadCaseList = comboList;
             }
             else
             {

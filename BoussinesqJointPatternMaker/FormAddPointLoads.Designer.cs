@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddPointLoads));
             this.dgvPointLoads = new System.Windows.Forms.DataGridView();
             this.CancelBtn = new System.Windows.Forms.Button();
@@ -36,13 +37,15 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.formAddPointLoadsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PointID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoadCase = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Z = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Magnitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoadCase = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPointLoads)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formAddPointLoadsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPointLoads
@@ -51,11 +54,11 @@
             this.dgvPointLoads.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPointLoads.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PointID,
-            this.LoadCase,
             this.X,
             this.Y,
             this.Z,
-            this.Magnitude});
+            this.Magnitude,
+            this.LoadCase});
             this.dgvPointLoads.Location = new System.Drawing.Point(12, 108);
             this.dgvPointLoads.Name = "dgvPointLoads";
             this.dgvPointLoads.Size = new System.Drawing.Size(520, 319);
@@ -130,17 +133,14 @@
             this.textBox4.Text = "3. This input dialog does not require the Zs to be zero. However, the Zs should b" +
     "e at the \"surface\".";
             // 
+            // formAddPointLoadsBindingSource
+            // 
+            this.formAddPointLoadsBindingSource.DataSource = typeof(BoussinesqJointPatternMaker.FormAddPointLoads);
+            // 
             // PointID
             // 
             this.PointID.HeaderText = "Point ID";
             this.PointID.Name = "PointID";
-            // 
-            // LoadCase
-            // 
-            this.LoadCase.HeaderText = "Load Case";
-            this.LoadCase.Name = "LoadCase";
-            this.LoadCase.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.LoadCase.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // X
             // 
@@ -162,6 +162,13 @@
             this.Magnitude.HeaderText = "Magnitude";
             this.Magnitude.Name = "Magnitude";
             // 
+            // LoadCase
+            // 
+            this.LoadCase.HeaderText = "Load Case";
+            this.LoadCase.Name = "LoadCase";
+            this.LoadCase.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.LoadCase.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // FormAddPointLoads
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +186,7 @@
             this.Name = "FormAddPointLoads";
             this.Text = "Add New Point Loads";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPointLoads)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formAddPointLoadsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,11 +201,12 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.BindingSource formAddPointLoadsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn PointID;
-        private System.Windows.Forms.DataGridViewComboBoxColumn LoadCase;
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
         private System.Windows.Forms.DataGridViewTextBoxColumn Z;
         private System.Windows.Forms.DataGridViewTextBoxColumn Magnitude;
+        private System.Windows.Forms.DataGridViewComboBoxColumn LoadCase;
     }
 }

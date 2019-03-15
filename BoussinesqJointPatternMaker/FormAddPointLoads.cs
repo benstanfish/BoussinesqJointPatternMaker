@@ -13,7 +13,7 @@ namespace BoussinesqJointPatternMaker
     public partial class FormAddPointLoads : Form
     {
         public System.Data.DataTable pDataTable { get; set; }
-        public List<string> pComboList { get; set; }
+        public System.Data.DataTable pLoadCaseTable { get; set; }
 
         public void RefreshDataSource()
         {
@@ -31,10 +31,14 @@ namespace BoussinesqJointPatternMaker
         public FormAddPointLoads()
         {
             InitializeComponent();
-            var column = new DataGridViewComboBoxColumn();
-            column.DataSource = pComboList;
-            dgvPointLoads.Columns[1].DataPropertyName = "LoadCase";
-            
+
+            DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
+            foreach(DataRow row in pLoadCaseTable.Rows)
+            {
+                cmb.Items.Add(row[0]);
+            }
+
+            dgvPointLoads.Columns.Add(cmb);
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -73,6 +77,9 @@ namespace BoussinesqJointPatternMaker
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+
+         
 
     }
 }

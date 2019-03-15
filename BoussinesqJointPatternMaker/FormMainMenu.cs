@@ -13,7 +13,10 @@ namespace BoussinesqJointPatternMaker
     public partial class MainForm : Form
     {
         private DataTable JointsDataTable { get; set; }
+        private DataTable LoadCasesDataTable { get; set; }
+        private List<string> LoadCaseList { get; set; }
         private DataTable PointsDataTable { get; set; }
+
 
         public MainForm()
         {
@@ -40,8 +43,7 @@ namespace BoussinesqJointPatternMaker
 
         private void ImportantNotesButton_Click(object sender, EventArgs e)
         {
-            NotesForm nf = new NotesForm();
-            nf.Show();
+            
         }
 
         private void ReviewJointsButton_Click(object sender, EventArgs e)
@@ -77,13 +79,59 @@ namespace BoussinesqJointPatternMaker
 
         private void ButtonClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
-        private void ButtonVersion_Click(object sender, EventArgs e)
+
+        private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAbout about = new FormAbout();
             about.Show();
+        }
+
+        private void importantNotesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NotesForm nf = new NotesForm();
+            nf.Show();
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void analysisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAnalysis fa = new FormAnalysis();
+            fa.Show();
+        }
+
+        private void ButtonLoadCases_Click(object sender, EventArgs e)
+        {
+            FormLoadCases loadCases = new FormLoadCases();
+            if (loadCases.ShowDialog() == DialogResult.OK)
+            {
+                this.LoadCasesDataTable = loadCases.pLoadCases;
+                this.CheckBoxLoadCases.Checked = true;
+
+                List<string> comboList = new List<string>();
+                foreach(DataRow row in LoadCasesDataTable.Rows)
+                {
+                    comboList.Add(row.ToString());
+                }
+                LoadCaseList = comboList;
+            }
+            else
+            {
+            }
+        }
+
+        private void ButtonReviewLoadCases_Click(object sender, EventArgs e)
+        {
+            FormLoadCases review = new FormLoadCases();
+            review.pLoadCases = LoadCasesDataTable;
+            review.RefreshDataSource();
+            review.Show();
         }
     }
 }

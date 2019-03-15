@@ -129,7 +129,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::BoussinesqJointPatternMaker.Properties.Resources.ChooseTablesDialog1;
+            this.pictureBox1.Image = global::BoussinesqJointPatternMaker.Properties.Resources.ChooseTablesDialog;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(38, 95);
             this.pictureBox1.Name = "pictureBox1";
@@ -137,7 +137,7 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // Form2
+            // FormJointInstructions
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
@@ -153,7 +153,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
+            this.Name = "FormJointInstructions";
             this.Text = "How to Import Joints";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

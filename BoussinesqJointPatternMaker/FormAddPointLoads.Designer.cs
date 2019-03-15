@@ -30,17 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddPointLoads));
             this.dgvPointLoads = new System.Windows.Forms.DataGridView();
-            this.PointID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Z = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Magnitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.ApplyButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.PointID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoadCase = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Z = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Magnitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPointLoads)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             this.dgvPointLoads.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPointLoads.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PointID,
+            this.LoadCase,
             this.X,
             this.Y,
             this.Z,
@@ -58,31 +60,6 @@
             this.dgvPointLoads.Name = "dgvPointLoads";
             this.dgvPointLoads.Size = new System.Drawing.Size(520, 319);
             this.dgvPointLoads.TabIndex = 0;
-            // 
-            // PointID
-            // 
-            this.PointID.HeaderText = "Point ID";
-            this.PointID.Name = "PointID";
-            // 
-            // X
-            // 
-            this.X.HeaderText = "X";
-            this.X.Name = "X";
-            // 
-            // Y
-            // 
-            this.Y.HeaderText = "Y";
-            this.Y.Name = "Y";
-            // 
-            // Z
-            // 
-            this.Z.HeaderText = "Z";
-            this.Z.Name = "Z";
-            // 
-            // Magnitude
-            // 
-            this.Magnitude.HeaderText = "Magnitude";
-            this.Magnitude.Name = "Magnitude";
             // 
             // CancelBtn
             // 
@@ -153,6 +130,38 @@
             this.textBox4.Text = "3. This input dialog does not require the Zs to be zero. However, the Zs should b" +
     "e at the \"surface\".";
             // 
+            // PointID
+            // 
+            this.PointID.HeaderText = "Point ID";
+            this.PointID.Name = "PointID";
+            // 
+            // LoadCase
+            // 
+            this.LoadCase.HeaderText = "Load Case";
+            this.LoadCase.Name = "LoadCase";
+            this.LoadCase.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.LoadCase.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // X
+            // 
+            this.X.HeaderText = "X";
+            this.X.Name = "X";
+            // 
+            // Y
+            // 
+            this.Y.HeaderText = "Y";
+            this.Y.Name = "Y";
+            // 
+            // Z
+            // 
+            this.Z.HeaderText = "Z";
+            this.Z.Name = "Z";
+            // 
+            // Magnitude
+            // 
+            this.Magnitude.HeaderText = "Magnitude";
+            this.Magnitude.Name = "Magnitude";
+            // 
             // FormAddPointLoads
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,16 +187,17 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPointLoads;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PointID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn X;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Y;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Z;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Magnitude;
         private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.Button ApplyButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PointID;
+        private System.Windows.Forms.DataGridViewComboBoxColumn LoadCase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn X;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Y;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Z;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Magnitude;
     }
 }

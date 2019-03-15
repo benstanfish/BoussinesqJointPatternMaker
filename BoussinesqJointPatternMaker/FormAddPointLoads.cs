@@ -13,6 +13,7 @@ namespace BoussinesqJointPatternMaker
     public partial class FormAddPointLoads : Form
     {
         public System.Data.DataTable pDataTable { get; set; }
+        public List<string> pComboList { get; set; }
 
         public void RefreshDataSource()
         {
@@ -22,6 +23,7 @@ namespace BoussinesqJointPatternMaker
             dgvPointLoads.Columns[2].DataPropertyName = pDataTable.Columns[2].ColumnName;
             dgvPointLoads.Columns[3].DataPropertyName = pDataTable.Columns[3].ColumnName;
             dgvPointLoads.Columns[4].DataPropertyName = pDataTable.Columns[4].ColumnName;
+            dgvPointLoads.Columns[5].DataPropertyName = pDataTable.Columns[5].ColumnName;
 
             dgvPointLoads.DataSource = this.pDataTable;
         }
@@ -29,6 +31,10 @@ namespace BoussinesqJointPatternMaker
         public FormAddPointLoads()
         {
             InitializeComponent();
+            var column = new DataGridViewComboBoxColumn();
+            column.DataSource = pComboList;
+            dgvPointLoads.Columns[1].DataPropertyName = "LoadCase";
+            
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -41,11 +47,11 @@ namespace BoussinesqJointPatternMaker
 
             DataTable table = new DataTable();
             table.Columns.Add("PointID");
+            table.Columns.Add("LoadCase");
             table.Columns.Add("X");
             table.Columns.Add("Y");
             table.Columns.Add("Z");
             table.Columns.Add("Magnitude");
-
             
             foreach (DataGridViewRow dgvr in dgvPointLoads.Rows)
             {
@@ -53,6 +59,7 @@ namespace BoussinesqJointPatternMaker
                 {
                     DataRow dr = table.NewRow();
                     dr["PointID"] = dgvr.Cells["PointID"].Value;
+                    dr["LoadCase"] = dgvr.Cells["LoadCase"].Value;
                     dr["X"] = dgvr.Cells["X"].Value;
                     dr["Y"] = dgvr.Cells["Y"].Value;
                     dr["Z"] = dgvr.Cells["Z"].Value;

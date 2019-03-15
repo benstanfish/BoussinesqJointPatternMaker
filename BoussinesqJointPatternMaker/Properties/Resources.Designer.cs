@@ -63,9 +63,9 @@ namespace BoussinesqJointPatternMaker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ChooseTablesDialog1 {
+        internal static System.Drawing.Bitmap ChooseTablesDialog {
             get {
-                object obj = ResourceManager.GetObject("ChooseTablesDialog1", resourceCulture);
+                object obj = ResourceManager.GetObject("ChooseTablesDialog", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,6 +76,26 @@ namespace BoussinesqJointPatternMaker.Properties {
         internal static System.Drawing.Bitmap ExportToExcel {
             get {
                 object obj = ResourceManager.GetObject("ExportToExcel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PointLoadEquation1a {
+            get {
+                object obj = ResourceManager.GetObject("PointLoadEquation1a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PointLoadEquation3a {
+            get {
+                object obj = ResourceManager.GetObject("PointLoadEquation3a", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

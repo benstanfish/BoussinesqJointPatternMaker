@@ -52,6 +52,12 @@
     <Compile Include="FormAbout.Designer.cs">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnalysis.Designer.cs">
+      <DependentUpon>FormAnalysis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLoadCases.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnalysis.resx">
+      <DependentUpon>FormAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoadCases.resx">
       <DependentUpon>FormLoadCases.cs</DependentUpon>
@@ -166,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\ChooseTablesDialog.jpg" />
+    <None Include="Resources\PointLoadEquation3a.jpg" />
+    <None Include="Resources\PointLoadEquation1a.jpg" />
+    <None Include="Resources\ChooseTablesDialog1.jpg" />
     <None Include="Resources\ExportToExcel.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -32,13 +32,8 @@ namespace BoussinesqJointPatternMaker
         {
             InitializeComponent();
 
-            DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
-            foreach(DataRow row in pLoadCaseTable.Rows)
-            {
-                cmb.Items.Add(row[0]);
-            }
+            
 
-            dgvPointLoads.Columns.Add(cmb);
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
